@@ -1,2 +1,9 @@
-# Ejercicio1-MisDesarrollos
-Ejercicio 1 de la prueba técnica para el puesto de Frontend en MisDesarrollos
+# Prueba técnica de MisDesarrollos - Ejercicio 1
+
+##Tecnologías utilizadas:
+
+- React + Vite
+- Framer Motion
+- Toastify
+- Tailwind
+- React-Geocode
