@@ -1,6 +1,6 @@
 # Prueba técnica de MisDesarrollos - Ejercicio 1
 
-##Tecnologías utilizadas:
+## Tecnologías utilizadas:
 
 - React + Vite
 - Framer Motion
