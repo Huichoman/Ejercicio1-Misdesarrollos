@@ -10,7 +10,7 @@ import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 setDefaults({
-  key: "AIzaSyDzpE9YpHHEFiQZiM90X90rEbGJxZ88CVw",
+  key: "",
   language: "es",
   region: "mx",
 })
@@ -64,6 +64,21 @@ function App() {
     }
   }
 
+  const deleteLocation = (id) => {
+    const updateLocations = locations.filter((location) => location.id !== id)
+    setLocations(updateLocations)
+    localStorage.setItem("locations", JSON.stringify(updateLocations))
+    toast.error("Ubicación eliminada", {
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    })
+  }
+
   return (
     <div className="flex flex-col items-center pt-8 pb-5 w-screen h-screen max-h-screen px-5 text-slate-700 bg-slate-50 font-poppins overflow-scroll">
       <ToastContainer position="bottom-right" />
@@ -76,10 +91,12 @@ function App() {
           ? locations.map(({ address, latitude, longitude, id }) => (
               <LocationCard
                 className="text-slate-700"
+                id={id}
                 key={id}
                 address={address}
                 latitude={latitude}
                 longitude={longitude}
+                deleteLocation={deleteLocation}
               />
             ))
           : null}
